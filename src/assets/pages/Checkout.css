@@ -1,0 +1,163 @@
+/* Basic container styles */
+.checkout-container {
+    font-family: Arial, sans-serif;
+    /* margin: 20px; */
+    /* padding: 20px; */
+    background-color: #f4f4f4;
+    border-radius: 8px;
+  }
+  
+  .admin-panel h1 {
+    text-align: center;
+    font-size: 2em;
+    color: #333;
+  }
+  
+  /* Order review styles */
+  .order-review h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  
+  .order-summary {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+  }
+  
+  .shipping-info {
+    margin-bottom: 30px;
+  }
+  
+  .shipping-info h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  
+  .shipping-info form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .image-ship img {
+    width: 100%;
+    max-width: 500px;
+    height: 300px;
+    display: block;
+    margin: 20px auto;
+  }
+  
+  /* Payment info styles */
+  .payment-info h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  
+  .payment-info label {
+    display: block;
+    margin: 5px 0;
+  }
+  
+  .payment-info input[type="radio"] {
+    margin-right: 10px;
+  }
+  /* Prescription Info Section */
+.prescription-info {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.prescription-info h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.prescription-info label {
+  font-size: 1.1em;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.prescription-info input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.prescription-info p {
+  font-size: 1em;
+  color: #4caf50;
+  font-weight: 500;
+}
+
+.prescription-info input[type="file"]:invalid {
+  border-color: red;
+}
+
+.prescription-info input[type="file"]:valid {
+  border-color: green;
+}
+
+  #creditCardDetails,
+  #paypalDetails {
+    margin-top: 20px;
+  }
+  
+  #creditCardDetails input,
+  #paypalDetails input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  #paybutton {
+    background-color: #004080;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  #paybutton:hover {
+    background-color: #45a049;
+  }
+  
+  /* Confirmation Button */
+  #confirmOrderButton {
+    background-color: #004080;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    margin-top: 30px;
+  }
+  
+  #confirmOrderButton a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  #confirmOrderButton:hover {
+    background-color: #0056b3;
+  }
+  

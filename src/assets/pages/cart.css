@@ -1,0 +1,97 @@
+/* General Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+}
+
+h1, h2, h3 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+button {
+  background-color: #004080;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #456fa0;
+}
+
+/* Cart Section */
+.admin-panel {
+  background-color: #fff;
+  padding: 20px;
+  /* border-radius: 10px; */
+  /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); */
+  /* margin-bottom: 20px; */
+}
+
+.cart-head {
+  margin-bottom: 20px;
+}
+
+.inner-cart-head {
+  display: flex;
+  justify-content: space-between;
+}
+
+.inner-cart-head h3 {
+  flex: 1;
+  text-align: center;
+}
+
+.cart-list {
+  margin-top: 20px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.cart-item span {
+  flex: 1;
+  text-align: center;
+}
+
+.billing-info {
+  background-color: #fff;
+  padding: 20px;
+  /* border-radius: 10px; */
+  /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); */
+}
+
+#checkoutButton {
+  display: block;
+  margin-top: 20px;
+  width: 100%;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .inner-cart-head h3 {
+    font-size: 14px;
+  }
+
+  .billing-info p {
+    font-size: 14px;
+  }
+}

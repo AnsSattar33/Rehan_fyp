@@ -1,0 +1,52 @@
+/* Nav.css */
+
+.visited-nav {
+    background-color: #fff; /* Light background for clean look */
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for a subtle depth effect */
+  }
+  
+  .visited-nav .menu {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+     /* Center the navigation items */
+    margin: 0;
+  }
+  
+  .visited-nav .menu-item {
+    font-size: 18px;
+    font-weight: 500; /* Slightly bolder text for better legibility */
+    transition: transform 0.2s ease-in-out; /* Smooth hover transition */
+  }
+  
+  .visited-nav .menu-item a {
+    text-decoration: none;
+    color: #333; /* Default text color */
+    padding: 8px 12px; /* Add padding for better click area */
+    border-radius: 8px; /* Rounded corners for the links */
+    transition: background-color 0.3s, color 0.3s; /* Smooth background and color transition */
+  }
+  
+  .visited-nav .menu-item a:hover {
+    color: #fff; /* Change text color on hover */
+    background-color: #007bff; /* Light blue background on hover */
+    transform: scale(1.05); /* Slightly enlarge the link on hover */
+  }
+  
+  .visited-nav .menu-item a.active {
+    color: #fff;
+    background-color: #28a745; /* Green color for the active page */
+  }
+  
+  @media (max-width: 768px) {
+    .visited-nav .menu {
+      flex-direction: column; /* Stack items vertically on smaller screens */
+      gap: 15px;
+    }
+  
+    .visited-nav .menu-item {
+      font-size: 16px; /* Slightly smaller text on mobile */
+    }
+  }
+  

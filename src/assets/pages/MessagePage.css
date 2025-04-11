@@ -1,0 +1,105 @@
+/* MessagePage.css */
+
+.messages-page {
+    padding: 20px;
+    background-color: #f9f9f9;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+  }
+  
+  .messages-page h1 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .message-card {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .message-card h3 {
+    font-size: 20px;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  .message-card p {
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 10px;
+  }
+  
+  .reply-section {
+    margin-top: 20px;
+  }
+  
+  .reply-section input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    outline: none;
+  }
+  
+  .reply-section button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+  
+  .reply-section button:hover {
+    background-color: #0056b3;
+  }
+  
+  .message-card button:focus,
+  .reply-section button:focus {
+    outline: none;
+  }
+  
+  .messages-page p {
+    font-size: 18px;
+    color: #555;
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .messages-page {
+      padding: 10px;
+    }
+  
+    .message-card {
+      padding: 15px;
+    }
+  
+    .message-card h3 {
+      font-size: 18px;
+    }
+  
+    .message-card p {
+      font-size: 14px;
+    }
+  
+    .reply-section input {
+      padding: 8px;
+      font-size: 14px;
+    }
+  
+    .reply-section button {
+      font-size: 14px;
+      padding: 8px 15px;
+    }
+  }
+  

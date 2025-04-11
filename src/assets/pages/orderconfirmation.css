@@ -1,0 +1,105 @@
+/* Order Confirmation Page */
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 40px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .order-summary p {
+    font-size: 18px;
+    color: #555;
+    margin: 10px 0;
+  }
+  
+  .shipping-payment-info {
+    margin-top: 30px;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .shipping-payment-info p {
+    margin: 8px 0;
+  }
+  
+  .shipping-payment-info a {
+    color: #0b0c0b;
+    text-decoration: none;
+  }
+  
+  .shipping-payment-info a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Button Styling */
+  button, .button {
+    background-color: #004080; /* New vibrant color */
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+  }
+  
+  button:hover, .button:hover {
+    background-color: #22159e; /* Darker shade for hover effect */
+    transform: scale(1.05); /* Slight scale-up effect */
+    /* box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); */
+  }
+  
+  button:active, .button:active {
+    transform: scale(1); /* Return to original size when clicked */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .container {
+      padding: 20px;
+      margin: 20px;
+    }
+  
+    h1 {
+      font-size: 28px;
+    }
+  
+    h2 {
+      font-size: 20px;
+    }
+  
+    h3 {
+      font-size: 16px;
+    }
+  
+    .order-summary p {
+      font-size: 16px;
+    }
+  
+    .shipping-payment-info {
+      font-size: 14px;
+    }
+  }
+  
