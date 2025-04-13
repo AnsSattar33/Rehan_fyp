@@ -46,7 +46,7 @@ const App: React.FC = () => {
         >
           {/* Nested routes for the dashboard */}
           <Route path="add-product" element={<AddProduct />} />
-          <Route path="orders" element={<Order />} />
+          <Route index element={<Order />} />
           <Route path="messages" element={<Message />} />
         </Route>
         <Route path="/orderConfirmation" element={<OrderConfirm />} />

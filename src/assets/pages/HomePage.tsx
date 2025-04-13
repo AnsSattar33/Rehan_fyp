@@ -17,7 +17,7 @@ import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 
 // Mock function to fetch products
-const fetchProducts = async () => {
+export const fetchProducts = async () => {
   return [
     {
       id: "1",
