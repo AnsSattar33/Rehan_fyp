@@ -2,6 +2,10 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import './viewpage.css';
+import { CartItem } from "@/lib/types/TypeCart";
+import { useSelector, useDispatch } from "react-redux";
+import { RootState, AppDispatch } from "@/lib/redux/store";
+import { addItem } from "@/lib/redux/cartSlice";
 
 // Mock function to fetch product details (replace this with an API call)
 const fetchProductDetails = async (productId: string) => {
@@ -13,7 +17,8 @@ const fetchProductDetails = async (productId: string) => {
       price: 96.00,
       description: "Used for relief of muscle and joint pain.",
       imageUrl: "/image/brufencream.webp",
-      requiresPrescription: "No",
+      quantity: 1,
+      requiresPrescription: false,
       generics: "Ibuprofen",
       usedFor: "Muscle pain, joint pain",
       howItWorks: "Works by reducing hormones that cause inflammation and pain in the body.",
@@ -30,7 +35,8 @@ const fetchProductDetails = async (productId: string) => {
       price: 250.00,
       description: "Protects baby's skin from rashes and irritation caused by diapers.",
       imageUrl: "/image/nexten baby.webp",
-      requiresPrescription: "No",
+      quantity: 1,
+      requiresPrescription: false,
       generics: "Zinc Oxide",
       usedFor: "Diaper rash",
       howItWorks: "Forms a protective barrier on the skin to repel moisture.",
@@ -47,7 +53,8 @@ const fetchProductDetails = async (productId: string) => {
       price: 34.00,
       description: "Used for headache, migraine, toothache, and general pain relief.",
       imageUrl: "/image/panadol.webp",
-      requiresPrescription: "No",
+      quantity: 1,
+      requiresPrescription: false,
       generics: "Paracetamol + Caffeine",
       usedFor: "Pain and fever",
       howItWorks: "Paracetamol reduces pain and fever, caffeine enhances pain relief.",
@@ -64,7 +71,8 @@ const fetchProductDetails = async (productId: string) => {
       price: 750.00,
       description: "Used to treat head lice infestations.",
       imageUrl: "/image/de-lice.webp",
-      requiresPrescription: "No",
+      quantity: 1,
+      requiresPrescription: false,
       generics: "Permethrin 1%",
       usedFor: "Head lice",
       howItWorks: "Paralyzes and kills lice and their eggs.",
@@ -81,7 +89,8 @@ const fetchProductDetails = async (productId: string) => {
       price: 89.00,
       description: "A traditional herbal drink used to cool the body.",
       imageUrl: "/image/lal sharbat.webp",
-      requiresPrescription: "No",
+      quantity: 1,
+      requiresPrescription: false,
       generics: "Herbal blend",
       usedFor: "Heatstroke, thirst",
       howItWorks: "Cools down the body temperature naturally.",
@@ -98,7 +107,8 @@ const fetchProductDetails = async (productId: string) => {
       price: 25.00,
       description: "Herbal remedy used for cold, flu, cough, and sore throat.",
       imageUrl: "/image/11647.webp",
-      requiresPrescription: "No",
+      quantity: 1,
+      requiresPrescription: false,
       generics: "Herbal formulation",
       usedFor: "Cold, cough, flu",
       howItWorks: "Provides soothing effect and relieves congestion and throat irritation.",
@@ -115,7 +125,8 @@ const fetchProductDetails = async (productId: string) => {
       price: 2945.00,
       description: "Complete, balanced nutrition for adults with high protein and essential nutrients.",
       imageUrl: "/image/ensure.webp",
-      requiresPrescription: "No",
+      quantity: 1,
+      requiresPrescription: false,
       generics: "Nutritional supplement",
       usedFor: "Malnutrition, elderly nutrition, recovery",
       howItWorks: "Provides essential vitamins, minerals, protein, and calories.",
@@ -132,7 +143,8 @@ const fetchProductDetails = async (productId: string) => {
       price: 5400.00,
       description: "Digital device to monitor blood pressure at home.",
       imageUrl: "/image/bpm.webp",
-      requiresPrescription: "No",
+      quantity: 1,
+      requiresPrescription: false,
       generics: "N/A (Medical Device)",
       usedFor: "Blood pressure monitoring",
       howItWorks: "Uses oscillometric method to detect blood pressure via cuff inflation.",
@@ -149,7 +161,8 @@ const fetchProductDetails = async (productId: string) => {
       price: 300.00,
       description: "Gentle wipes for baby’s delicate skin, suitable for face and body.",
       imageUrl: "/image/wipes.webp",
-      requiresPrescription: "No",
+      quantity: 1,
+      requiresPrescription: false,
       generics: "Moisturizing wipes",
       usedFor: "Cleaning and moisturizing baby skin",
       howItWorks: "Cleans and moisturizes skin with mild, non-irritating formula.",
@@ -166,7 +179,8 @@ const fetchProductDetails = async (productId: string) => {
       price: 1789.00,
       description: "Includes baby wash, lotion, and powder – perfect for newborn care.",
       imageUrl: "./image/babe.webp",
-      requiresPrescription: "No",
+      quantity: 1,
+      requiresPrescription: false,
       generics: "Baby care products",
       usedFor: "Bathing, moisturizing, and skin protection",
       howItWorks: "Cleans and protects baby’s skin with hypoallergenic formulas.",
@@ -181,19 +195,30 @@ const fetchProductDetails = async (productId: string) => {
 
 const ViewPage = () => {
   const { productId } = useParams<{ productId: string }>();
-  const [product, setProduct] = useState<any>(null);
+  const [product, setProduct] = useState<CartItem>();
+  const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
     const loadProductDetails = async () => {
-      const productDetails = await fetchProductDetails(productId || "");
-      const selectedProduct = productDetails.find((item: any) => item.id === productId);
+      const productDetails = await fetchProductDetails(productId!);
+      const selectedProduct = productDetails.find((item: CartItem) => item.id === productId);
       setProduct(selectedProduct);
     };
 
     loadProductDetails();
+
   }, [productId]);
-  console.log(productId, "productId");
-  console.log(product, "product");
+
+  const handleCartItems = async (productId: string) => {
+
+    if (product) {
+      dispatch(addItem(product));
+      alert("Item added to cart successfully!");
+    } else {
+      alert("Product not found!");
+    }
+  }
+
   if (!product) {
     return <p>Loading...</p>;
   }
@@ -212,7 +237,7 @@ const ViewPage = () => {
               {product.price.toFixed(2)}PKR  <span className="">PKR {product.price.toFixed(2)}</span>
             </p>
             <p>Per Strip</p>
-            <Link to="/cart">
+            <Link onClick={() => handleCartItems(product.id)} to="/cart">
               <button className="">Add to Cart</button>
             </Link>
           </div>

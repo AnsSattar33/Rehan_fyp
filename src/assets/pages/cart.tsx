@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './cart.css';
-
+import { RootState, AppDispatch } from '../../lib/redux/store';
+import { useSelector, useDispatch } from 'react-redux';
 interface CartItem {
   name: string;
   price: number;
@@ -14,7 +15,8 @@ const Cart: React.FC = () => {
   const [taxes, setTaxes] = useState<number>(0);
   const [total, setTotal] = useState<number>(0);
   const navigate = useNavigate();
-
+  const cartItems = useSelector((state: RootState) => state.cart.items);
+  console.log(cartItems);
   useEffect(() => {
     // Check if user is signed in
     const user = JSON.parse(localStorage.getItem('user') || 'null');
@@ -68,7 +70,7 @@ const Cart: React.FC = () => {
           </div>
         </div>
         <div className="cart-list">
-          {cart.map((item, index) => (
+          {cartItems.map((item, index) => (
             <div key={index} className="cart-item">
               <span>{item.name}</span>
               <span>{item.price} PKR</span>

@@ -17,7 +17,6 @@ import AddProduct from './assets/pages/add-product';
 import Order from './assets/pages/orders';
 import Message from './assets/pages/messages';
 import Dashboard from './assets/pages/Dashboard';
-
 const App: React.FC = () => {
   const [userId, setUserId] = useState<string | null>(null);
 
@@ -25,6 +24,7 @@ const App: React.FC = () => {
     <div>
       <Header />
       <Nav />
+
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/signin" element={<SignIn />} />
