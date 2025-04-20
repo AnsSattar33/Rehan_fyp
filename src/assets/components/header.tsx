@@ -18,6 +18,7 @@ const Header = () => {
         <div className="header-actions">
           <Link to="/signin" className="auth-link">Sign In | Sign Up</Link>
           <Link to="/Dashboard" className="auth-link"   >Admin Dashboard</Link>
+          <Link to='/asdf' className='auth-link'>Owner Dashboard</Link>
           <Link to="/cart" className="cart-link">
             <FaShoppingCart />
             <span className="cart-count">0</span>
@@ -25,7 +26,7 @@ const Header = () => {
         </div>
       </div>
 
-      
+
       <nav className="categories-menu">
         <ul className="menu">
           <li className="menu-item">

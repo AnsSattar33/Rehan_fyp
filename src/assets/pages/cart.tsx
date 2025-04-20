@@ -3,12 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './cart.css';
 import { RootState, AppDispatch } from '../../lib/redux/store';
 import { useSelector, useDispatch } from 'react-redux';
-import { decrementItemQuantity, incrementItemQuantity } from '../../lib/redux/cartSlice';
-interface CartItem {
-  name: string;
-  price: number;
-  quantity: number;
-}
+import { decrementItemQuantity, incrementItemQuantity, removeItem } from '../../lib/redux/cartSlice';
 
 const Cart: React.FC = () => {
   // const [cart, setCart] = useState<CartItem[]>([]);
@@ -90,6 +85,12 @@ const Cart: React.FC = () => {
                 <button onClick={() => dispatch(incrementItemQuantity(item.id))}>+</button>
               </div>
               <span>{(item.price * item.quantity).toFixed(2)} PKR</span>
+
+              <div>
+                <button className='bg-red-500 text-white px-2 py-1 rounded' onClick={() => dispatch(removeItem(item.id))}>
+                  Remove
+                </button>
+              </div>
             </div>
           ))}
         </div>
